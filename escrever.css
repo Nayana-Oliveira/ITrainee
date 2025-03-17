@@ -1,7 +1,7 @@
 :root {
     --primary-color: #2B2A4C;
-    --secondary-color: #EA906C;
-    --accent-color: #B31312;
+    --secondary-color: #DA70D6;
+    --accent-color: #ad0fad;
     --background-color: #EEE2DE;
     --text-color: #1E1E1E;
     --gradient-primary: linear-gradient(135deg, #2B2A4C 0%, #1A1A2E 100%);
@@ -123,6 +123,7 @@
     background-color: var(--secondary-color);
 }
 
+/* Estilos para a seção de nova postagem */
 .new-thread-section {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
@@ -136,14 +137,15 @@
     margin: 20px auto;
     align-self: center;
     flex-grow: 1;
-
 }
 
+/* Header da seção de nova postagem */
 .form-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
+/* Título da nova postagem com animação na linha */
 .form-header h2 {
     color: var(--primary-color);
     font-size: 1.8rem;
@@ -152,13 +154,28 @@
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
+    position: relative; /* Adicionado para permitir posicionamento relativo do pseudo-elemento */
 }
 
-.form-header p {
-    color: var(--text-color);
-    font-size: 0.9rem;
+.form-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;  /* Ajuste para a linha ficar mais próxima do título */
+    left: 50%;  /* Centraliza a linha em relação ao título */
+    width: 60%;  /* Largura inicial da linha */
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);  /* Garante que a linha fique perfeitamente centralizada */
 }
 
+.form-header h2:hover::after {
+    width: 100%;  /* Aumenta a largura da linha ao passar o mouse */
+    left: 0;  /* Mantém a linha centralizada ao expandir */
+    transform: translateX(0);  /* Garante que a linha não saia para fora */
+}
+
+/* Estilos do formulário e outras seções */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -267,7 +284,7 @@
     transition: transform 0.3s ease;
 }
 
-/* rodapé */
+/* Rodapé */
 .footer {
     background: var(--);
     color: var(--text-color);
@@ -292,63 +309,4 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-}
-
-.footer-links a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--accent-color);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 3rem;
-}
-
-.copyright {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 70px;
-    }
-    
-    .navbar {
-        padding: 1rem 5%;
-    }
-    
-    .nav-links {
-        gap: 1rem;
-    }
-    
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-actions {
-        flex-direction: column;
-    }
-    
-    .cancel-btn,
-    .submit-btn {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .new-thread-section {
-        padding: 1.5rem;
-    }
-}
+    gap: 0.8rem

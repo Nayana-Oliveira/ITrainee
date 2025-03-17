@@ -120,13 +120,13 @@ body {
     animation: pulse 8s infinite linear;
 }
 
-.section-title-container {
+.section-title-container-pj {
     text-align: center;
     margin-bottom: 3rem;
     padding: 0 5%;
 }
 
-.section-title {
+.section-title-pj {
     font-size: 2.5rem;
     color: var(--text-color);
     margin-bottom: 1rem;
@@ -134,24 +134,64 @@ body {
     display: inline-block;
 }
 
-.section-title::after {
+.section-title-pj::after {
     content: '';
     position: absolute;
     bottom: -10px;
     left: 50%;
-    transform: translateX(-50%);
     width: 60%;
     height: 2px;
     background: var(--primary-color);
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.section-title-pj:hover::after {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Sobre o projeto */
+
+.section-title-container-pj{
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 5%;
+}
+
 .about-project-section {
     padding: 7rem 0 4rem;
     background: linear-gradient(45deg, 
         rgba(234, 144, 108, 0.15) 0%, 
         rgba(234, 144, 108, 0.1) 100%);
     backdrop-filter: blur(5px);
+}
+
+.section-title-pj {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+
+}
+
+.section-title-pj::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.section-title-pj:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
 .about-container {
@@ -251,7 +291,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Carousel */
+/* Carrossel */
 .carousel-section {
     padding: 4rem 0 8rem;
     position: relative;
@@ -313,8 +353,7 @@ body {
     width: 100%;
     text-align: center;
     font-size: 1.2rem;
-    color: var(--background-color);
-    background-color: rgba(43, 42, 76, 0.8); 
+    color: var(--text-color);
     padding: 0.5rem 1rem;
     transition: bottom 0.3s ease;
     z-index: 3;
