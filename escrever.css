@@ -1,10 +1,9 @@
 :root {
-    --primary-color: #2B2A4C;
-    --secondary-color: #DA70D6;
-    --accent-color: #ad0fad;
-    --background-color: #EEE2DE;
-    --text-color: #1E1E1E;
-    --gradient-primary: linear-gradient(135deg, #2B2A4C 0%, #1A1A2E 100%);
+    --primary-color: #2B2A4C; 
+    --secondary-color: #EA906C; 
+    --accent-color: #E0341F; 
+    --background-color: #EEE2DE; 
+    --text-color: #1E1E1E; 
 }
 
 * {
@@ -14,11 +13,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.body {
-    background-color: var(--background-color);
+body {
     color: var(--text-color);
-    line-height: 1.6;
+    background-color: var(--background-color);
     overflow-x: hidden;
+    position: relative;
 }
 
 .navbar {
@@ -309,4 +308,26 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem
+    gap: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
