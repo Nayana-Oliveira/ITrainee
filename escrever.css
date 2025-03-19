@@ -31,7 +31,7 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--secondary-color);
     backdrop-filter: blur(10px);
 }
 
@@ -109,10 +109,6 @@ body {
     box-shadow: 0 2px 8px rgba(179, 19, 18, 0.3);
 }
 
-.nav-links a:hover::after {
-    width: 100%; 
-}
-
 .profile-icon a::after {
     content: none; 
 }
@@ -122,12 +118,15 @@ body {
     background-color: var(--secondary-color);
 }
 
-/* Estilos para a seção de nova postagem */
+.nav-links a:hover::after {
+    width: 100%; 
+}
+
 .new-thread-section {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    padding: 2rem;
+    padding: 6rem;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(43, 42, 76, 0.1);
     animation: slideUp 0.8s ease;
@@ -138,13 +137,11 @@ body {
     flex-grow: 1;
 }
 
-/* Header da seção de nova postagem */
 .form-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-/* Título da nova postagem com animação na linha */
 .form-header h2 {
     color: var(--primary-color);
     font-size: 1.8rem;
@@ -153,28 +150,17 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    position: relative; /* Adicionado para permitir posicionamento relativo do pseudo-elemento */
+    position: relative; 
 }
 
-.form-header h2::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;  /* Ajuste para a linha ficar mais próxima do título */
-    left: 50%;  /* Centraliza a linha em relação ao título */
-    width: 60%;  /* Largura inicial da linha */
-    height: 2px;
-    background: var(--secondary-color);
-    transition: width 0.3s ease, left 0.3s ease;
-    transform: translateX(-50%);  /* Garante que a linha fique perfeitamente centralizada */
+.form-header h2{
+    color: var(--secondary-color);
 }
 
-.form-header h2:hover::after {
-    width: 100%;  /* Aumenta a largura da linha ao passar o mouse */
-    left: 0;  /* Mantém a linha centralizada ao expandir */
-    transform: translateX(0);  /* Garante que a linha não saia para fora */
+.form-header i {
+    color: var(--text-color);
 }
 
-/* Estilos do formulário e outras seções */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -312,13 +298,13 @@ body {
 }
 
 .footer-links a {
-    color: var(--accent-color);
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
 .footer-bottom {

@@ -30,7 +30,7 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--secondary-color);
     backdrop-filter: blur(10px);
 }
 
@@ -338,13 +338,13 @@ body {
 }
 
 .footer-links a {
-    color: var(--accent-color);
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
 .footer-bottom {

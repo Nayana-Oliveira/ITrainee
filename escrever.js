@@ -94,3 +94,64 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500); 
     });
 });
+
+// Função para filtrar tópicos por categoria
+function filterThreads(category) {
+    const threads = document.querySelectorAll('.thread-card');
+
+    threads.forEach(thread => {
+        const threadCategory = thread.getAttribute('data-category');
+
+        if (category === 'all' || threadCategory === category) {
+            thread.style.display = 'block'; 
+        } else {
+            thread.style.display = 'none'; 
+        }
+    });
+}
+
+document.getElementById('category-all').addEventListener('click', (e) => {
+    e.preventDefault();
+    filterThreads('all');
+});
+
+document.getElementById('category-js').addEventListener('click', (e) => {
+    e.preventDefault();
+    filterThreads('js');
+});
+
+document.getElementById('category-html').addEventListener('click', (e) => {
+    e.preventDefault();
+    filterThreads('html');
+});
+
+document.getElementById('category-node').addEventListener('click', (e) => {
+    e.preventDefault();
+    filterThreads('node');
+});
+
+document.getElementById('category-react').addEventListener('click', (e) => {
+    e.preventDefault();
+    filterThreads('react');
+});
+
+document.getElementById('category-others').addEventListener('click', (e) => {
+    e.preventDefault();
+    filterThreads('others');
+});
+
+function searchThreads() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let threads = document.querySelectorAll('.thread-card');
+
+    threads.forEach(thread => {
+        let title = thread.querySelector('.thread-title').textContent.toLowerCase();
+        let content = thread.querySelector('.thread-content').textContent.toLowerCase();
+        
+        if (title.includes(input) || content.includes(input)) {
+            thread.style.display = 'block';
+        } else {
+            thread.style.display = 'none';
+        }
+    });
+}

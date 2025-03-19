@@ -1,7 +1,7 @@
 :root {
     --primary-color: #2B2A4C; 
     --secondary-color: #EA906C; 
-    --accent-color: #E0341F; 
+    --accent-color: #B31312; 
     --background-color: #EEE2DE; 
     --text-color: #1E1E1E; 
 }
@@ -20,15 +20,7 @@ body {
     position: relative;
 }
 
-.body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
 .navbar {
-    background: var(--);
     padding: 1.5rem 5%;
     position: fixed;
     width: 100%;
@@ -38,7 +30,7 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--secondary-color);
     backdrop-filter: blur(10px);
 }
 
@@ -192,7 +184,7 @@ body {
 }
 
 .upload-overlay:hover {
-    background: #c71615;
+    background: var(--secondary-color);
     transform: scale(1.1);
 }
 
@@ -324,7 +316,7 @@ body {
 }
 
 .submit-btn:hover {
-    background: #c71615;
+    background: var(--secondary-color);
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 6px 20px rgba(179, 19, 18, 0.4);
 }
@@ -420,7 +412,7 @@ body {
 }
 
 .footer-section h4 {
-    color: var(--text-color);
+    color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
@@ -432,7 +424,7 @@ body {
 }
 
 .footer-links a {
-    color: var(--secondary-color);
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }

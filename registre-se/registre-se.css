@@ -1,9 +1,10 @@
 :root {
-    --primary-color: #2B2A4C;
-    --secondary-color: #EA906C;
-    --accent-color: #B31312;
-    --background-color: #EEE2DE;
-    --text-color: #1E1E1E;
+    --primary-color: #2B2A4C; 
+    --secondary-color: #EA906C; 
+    --accent-color: #E0341F; 
+    --background-color: #EEE2DE; 
+    --text-color: #1E1E1E; 
+    --color-2: #4d4a92;
 }
 
 * {
@@ -14,11 +15,14 @@
 }
 
 body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(90deg, #e2e2e2, #cfd6ff);
     padding: 20px;
 }
 
@@ -76,7 +80,7 @@ body {
 .form-box.right h1 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: var(--text-color);
+    color: var(--primary-color);
     text-align: center;
 }
 
@@ -134,21 +138,23 @@ body {
 }
 
 .btn {
+    justify-content: center;
     width: 100%;
     background: var(--primary-color);
     color: #fff;
-    border: none;
-    padding: 14px;
-    border-radius: 5px;
+    border: 2px solid #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    opacity: 0.9;
+    background: var(--color-2);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .register-btn {
